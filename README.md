@@ -1,4 +1,4 @@
-#A demo for a tourist app that I've worked on
+##A demo for a tourist app that I've worked on.
 This is BY NO MEANS a complete project, it is just a demo of an idea that I've worked on with a team of friends.
 All the JavaScript logic for this project (including the custom made sorting function that compares coordinates using your geolocation) is written by me, everything else(the database, the layout etc) was made by the rest of the team.
 
