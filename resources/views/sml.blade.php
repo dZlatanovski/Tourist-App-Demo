@@ -14,7 +14,7 @@
     <!-- custom style -->
     <link rel="stylesheet" href="{{asset('css/dmlStyle.css')}}" />
 
-    <title>G4+2 SEDC Project</title>
+    <title>Tourist App Demo</title>
   </head>
   <body>
 
