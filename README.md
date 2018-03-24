@@ -1,7 +1,7 @@
 ## A demo for a tourist app that I've worked on.
 This is BY NO MEANS a complete project, it is just a demo of an idea that I've worked on with a team of friends.
 All the JavaScript code for this project (including the custom made sorting function that compares coordinates using your geolocation) is written by me as I was responsible for the JavaScript part of this project. Everything else(the database, the layout etc) was made by the rest of the team.
-
+The "Dynamic Tour" feature can be found under "http://localhost/Tourist-App-Demo-master/public/dynamic-map" or by clicking the "Dynamic Tour" button at the alpha route of the demo. This feature is the core of the app and offers the user a dynamic tour guide through all the destinations stored in the data base. Using the user's location the app generates a dynamic list of all the destinations sorting them from the closest to the furthest one giving every user the best possible experience and guiding him through all the destinations starting from the nearest one.
 
 ## How to initialize this project on your local computer
 
