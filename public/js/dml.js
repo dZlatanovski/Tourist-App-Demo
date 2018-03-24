@@ -31,13 +31,15 @@ function initMap() {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
                     };
+                    //sorting the maps by distance compared to the user location
+                    let sortedMaps = unsortedMaps.sort((a, b) => sortingCoordinatesFunction(a, b, userPos));
                     //--------------INITIAL MAP WITH USER LOCATION---------------
-                    for (let i = 0; i < unsortedMaps.length; i++) {
+                    for (let i = 0; i < sortedMaps.length; i++) {
                         //LEFT-SIDE MAP RIGHT-SIDE INFO
                         let mapRow = $(`<div class="row extra-padding" id="mapRow-${i}" />`);
 
                         $('#mainCol').append(mapRow);
-                        let destinationPos = unsortedMaps[i][0];
+                        let destinationPos = sortedMaps[i][0];
 
                         if (i === 0) {
                             let colLeft = $(`<div class="col-xs-12 col-sm-6" />`);
@@ -80,8 +82,8 @@ function initMap() {
                             let rightCol = $(`<div class="col-xs-12 col-sm-6" />`);
                             let subRow = $(`<div class="row" />`);
                             let col = $('<div class="col-xs-12 col-sm-12" />');
-                            let imgSrc = unsortedMaps[i][1].img;
-                            let about = unsortedMaps[i][1].info;
+                            let imgSrc = sortedMaps[i][1].img;
+                            let about = sortedMaps[i][1].info;
                             let imgDiv = $(`<img src=${imgSrc} class="img img-fluid img-default" />`);
                             let moreInfo = $("<h3 class='text-center'>More Info</h3>");
                             let aboutP = $(`<p>${about}</p>`);
@@ -100,13 +102,13 @@ function initMap() {
                             $("#mainCol").append(div);
 
                         } else if (i === 1) {
-                            userPosition = unsortedMaps[0][0];
+                            userPosition = sortedMaps[0][0];
 
                             let rightCol = $(`<div class="col-xs-12 col-sm-6" />`);
                             let subRow = $(`<div class="row" />`);
                             let col = $('<div class="col-xs-12 col-sm-12" />');
-                            let imgSrc = unsortedMaps[i][1].img;
-                            let about = unsortedMaps[i][1].info;
+                            let imgSrc = sortedMaps[i][1].img;
+                            let about = sortedMaps[i][1].info;
                             let imgDiv = $(`<img src=${imgSrc} class="img img-fluid img-default" />`);
                             let moreInfo = $("<h3 class='text-center'>More Info</h3>");
                             let aboutP = $(`<p>${about}</p>`);
@@ -155,7 +157,7 @@ function initMap() {
                             $("#mainCol").append(div);
                         } else {
                             if (i % 2 === 0) {
-                                userPosition = unsortedMaps[i - 1][0];
+                                userPosition = sortedMaps[i - 1][0];
                                 let colLeft = $(`<div class="col-xs-12 col-sm-6" />`);
                                 let mapDiv = $(`<div id="map-${i}" />`);
                                 mapDiv.css("height", "500px");
@@ -190,8 +192,8 @@ function initMap() {
                                 let rightCol = $(`<div class="col-xs-12 col-sm-6" />`);
                                 let subRow = $(`<div class="row" />`);
                                 let col = $('<div class="col-xs-12 col-sm-12" />');
-                                let imgSrc = unsortedMaps[i][1].img;
-                                let about = unsortedMaps[i][1].info;
+                                let imgSrc = sortedMaps[i][1].img;
+                                let about = sortedMaps[i][1].info;
                                 let imgDiv = $(`<img src=${imgSrc} class="img img-fluid img-default" />`);
                                 let moreInfo = $("<h3 class='text-center'>More Info</h3>");
                                 let aboutP = $(`<p>${about}</p>`);
@@ -209,13 +211,13 @@ function initMap() {
                                 div.append(button);
                                 $("#mainCol").append(div);
                             } else {
-                                userPosition = unsortedMaps[i - 1][0];
+                                userPosition = sortedMaps[i - 1][0];
 
                                 let rightCol = $(`<div class="col-xs-12 col-sm-6" />`);
                                 let subRow = $(`<div class="row" />`);
                                 let col = $('<div class="col-xs-12 col-sm-12" />');
-                                let imgSrc = unsortedMaps[i][1].img;
-                                let about = unsortedMaps[i][1].info;
+                                let imgSrc = sortedMaps[i][1].img;
+                                let about = sortedMaps[i][1].info;
                                 let imgDiv = $(`<img src=${imgSrc} class="img img-fluid img-default" />`);
                                 let moreInfo = $("<h3 class='text-center'>More Info</h3>");
                                 let aboutP = $(`<p>${about}</p>`);
